@@ -12,18 +12,13 @@ import kotlinx.android.synthetic.main.fragment_input.*
 import kotlinx.android.synthetic.main.fragment_input.view.*
 
 class InputFragment : Fragment() {
-    fun onViewCreated(
-        inflater: LayoutInflater, container: ViewGroup?,
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        val inputView: View = inflater.inflate(R.layout.fragment_input, container, false)
-//        input_city.text
-//        input_latitude.text
-//        input_longitude.text
-//        btn_add.OnClickListener {}
-
-        return inputView
+        return inflater.inflate(R.layout.fragment_input, container, false)
     }
 
     companion object {
