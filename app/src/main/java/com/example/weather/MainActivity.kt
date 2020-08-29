@@ -8,11 +8,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        if (savedInstanceState == null) {
-        val inputFragment: InputFragment = InputFragment.newInstance()
-        supportFragmentManager.beginTransaction()
-            .add(R.id.container, inputFragment)
-            .commit()
-//        }
+        if (savedInstanceState == null) {
+            val inputFragment = InputFragment()
+            supportFragmentManager.beginTransaction()
+                .add(R.id.container, inputFragment)
+                .commit()
+        }
     }
 }
