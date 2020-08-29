@@ -14,22 +14,28 @@ class InputFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        return inflater.inflate(R.layout.fragment_input, container, false)
+    }
 
-        val view = inflater.inflate(R.layout.fragment_input, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         btn.setOnClickListener {
-            val city = input_city.text.toString()
-            val latitude = input_latitude.text.toString()
-            val longitude = input_longitude.text.toString()
-            val bundle = Bundle()
-            bundle.putString("city", city)
-            bundle.putString("latitude", latitude)
-            bundle.putString("longitude", longitude)
-            val outputFragment = OutputFragment()
-            outputFragment.setArguments(bundle)
-            fragmentManager?.beginTransaction()
-                ?.replace(R.id.container, outputFragment)
-                ?.commit()
+            openNextScreen()
         }
-        return view
+    }
+
+    private fun openNextScreen() {
+        val city = input_city.text.toString()
+        val latitude = input_latitude.text.toString()
+        val longitude = input_longitude.text.toString()
+        val bundle = Bundle()
+        bundle.putString("city", city)
+        bundle.putString("latitude", latitude)
+        bundle.putString("longitude", longitude)
+        val outputFragment = OutputFragment()
+        outputFragment.setArguments(bundle)
+        fragmentManager?.beginTransaction()
+            ?.replace(R.id.container, outputFragment)
+            ?.commit()
     }
 }

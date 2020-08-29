@@ -17,7 +17,11 @@ class OutputFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_output, container, false)
+        return inflater.inflate(R.layout.fragment_output, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         arguments?.let {
             city = it.getString("city")
             latitude = it.getString("latitude")
@@ -26,6 +30,5 @@ class OutputFragment : Fragment() {
             tvLatitude.text = latitude
             tvLongitude.text = longitude
         }
-        return view
     }
 }
