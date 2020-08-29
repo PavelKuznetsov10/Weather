@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             val inputFragment = InputFragment()
             supportFragmentManager.beginTransaction()
-                .add(R.id.container, inputFragment)
+                .replace(R.id.container, inputFragment)
                 .commit()
         }
     }

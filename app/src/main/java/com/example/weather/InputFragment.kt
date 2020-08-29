@@ -7,18 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_input.*
 
-class InputFragment : Fragment(), View.OnClickListener {
+class InputFragment : Fragment(){
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_input, container, false)
-        return view
-    }
 
-    override fun onClick(p0: View?) {
+        val view = inflater.inflate(R.layout.fragment_input, container, false)
         btn.setOnClickListener {
             val city = input_city.text.toString()
             val latitude = input_latitude.text.toString()
@@ -29,6 +26,10 @@ class InputFragment : Fragment(), View.OnClickListener {
             bundle.putString("longitude", longitude)
             val outputFragment = OutputFragment()
             outputFragment.setArguments(bundle)
+            fragmentManager?.beginTransaction()
+                ?.replace(R.id.container, outputFragment)
+                ?.commit()
         }
+        return view
     }
 }
