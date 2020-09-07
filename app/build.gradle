@@ -49,6 +49,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     //noinspection GradleCompatible
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     //annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
